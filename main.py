@@ -16,7 +16,6 @@ import requests
 import json
 import os
 app = Flask(__name__)
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///./users.db"
 app.secret_key = "supersecretkey"
 app.register_blueprint(github_blueprint, url_prefix="/login")

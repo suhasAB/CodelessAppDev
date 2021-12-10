@@ -21,6 +21,9 @@ app.secret_key = "supersecretkey"
 app.register_blueprint(github_blueprint, url_prefix="/login")
 
 
+db.create_all()
+db.session.commit()
+
 db.init_app(app)
 login_manager.init_app(app)
 

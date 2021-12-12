@@ -21,8 +21,6 @@ app.secret_key = "supersecretkey"
 app.register_blueprint(github_blueprint, url_prefix="/login")
 
 
-
-
 db.init_app(app)
 login_manager.init_app(app)
 
@@ -52,7 +50,8 @@ def push_to_github(content,sha,user):
     return resp
 
 
-
+with app.app_context():
+    db.create_all()
 
 
 @app.route("/ping")

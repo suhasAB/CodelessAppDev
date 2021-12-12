@@ -52,8 +52,7 @@ def push_to_github(content,sha,user):
     return resp
 
 
-with app.app_context():
-    db.create_all()
+
 
 
 @app.route("/ping")
